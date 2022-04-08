@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 import { Button, ButtonGroup, withTheme } from '@rneui/themed';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const ExploreScreen = () => {
+const ExploreScreen = ({navigation}) => {
     return (
 
       <View style={styles.container}>
@@ -19,7 +19,7 @@ const ExploreScreen = () => {
         title="Información Personal" 
         type="solid"
         icon={<Icon name="file-document" color="#ffffff" size={26} />}
-        onPress={() => navigation.navigate("Details")}
+        onPress={() => navigation.navigate("Personal")}
         />
 
         <Button 
