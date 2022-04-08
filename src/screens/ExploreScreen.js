@@ -19,7 +19,7 @@ const ExploreScreen = () => {
         title="Información Personal" 
         type="solid"
         icon={<Icon name="file-document" color="#ffffff" size={26} />}
-        onPress={() => alert('Button Clicked!')}
+        onPress={() => navigation.navigate("Details")}
         />
 
         <Button 

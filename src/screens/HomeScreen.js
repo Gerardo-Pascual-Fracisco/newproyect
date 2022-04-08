@@ -1,21 +1,44 @@
 import React from 'react';
 import { View, Text, StyleSheet, StatusBar,ScrollView } from 'react-native';
 import { useTheme } from '@react-navigation/native';
-import { Button, ButtonGroup, withTheme,SearchBar, Tile } from '@rneui/themed';
+import { Button, ButtonGroup, withTheme,SearchBar, Divider } from '@rneui/themed';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const HomeScreen = ({navigation}) => {
 
   const { colors } = useTheme();
   const [value, setValue] = React.useState("");
   const theme = useTheme();
+
+  const [
+    selectedIndex,
+    setSelectedIndex
+  ] = React.useState(1);
+  const [
+    selectedIndexes,
+    setSelectedIndexes
+  ] = React.useState([]);
   
     return (
-      <View style={styles.container}>
-      <Text style={{color: colors.text}}>Recientes</Text>
-      <ScrollView></ScrollView>
+      <SafeAreaView style={styles.container}>
 
-       <StatusBar barStyle= { theme.dark ? "light-content" : "dark-content" }/>
+        <StatusBar barStyle= { theme.dark ? "light-content" : "dark-content" }/>
+      <Text style={{color: colors.text}}>Recientes</Text>
+      <ScrollView horizontal={true}>
+      <Text style={{ color: colors.text }}>Recientes </Text>
+      <Text style={{ color: colors.text }}>Recientes </Text>
+      </ScrollView>
+      
+      <Divider
+      style={{ width: "100%", margin: 20 }}
+      color="#2089dc"
+      insetType="left"
+      subHeaderStyle={{}}
+      width={10}
+      orientation="horizontal"
+    />
+       
        <SearchBar 
         platform="android"
         containerStyle={{}}
@@ -31,45 +54,65 @@ const HomeScreen = ({navigation}) => {
         cancelButtonTitle="Cancel"
         cancelButtonProps={{}}
        />
-        <Tile
-      activeOpacity={0.5}
-      caption="Tile caption"
-      captionStyle={{}}
-      containerStyle={{}}
-      contentContainerStyle={{}}
-      height={300}
-      iconContainerStyle={{}}
-      imageContainerStyle={{}}
-      imageProps={{}}
-      imageSrc="SampleImage"
-      onPress={() => console.log("imageProps()")}
-      overlayContainerStyle={{}}
-      titleStyle={{}}
-      width={400}
-    />
-       <Text style={{color: colors.text}}>Populares</Text>
-         <Button 
+   
+   
+ <ScrollView horizontal={true}>
+ <Button
         buttonStyle={{
-                borderRadius: 20,
-                paddingVertical: 12,
-                paddingHorizontal: 100,   
-                marginHorizontal: 25,
-                marginVertical: 5,    
+          borderRadius: 20,
+          paddingVertical: 12,
+          paddingHorizontal: 100,
+          marginHorizontal: 25,
+          marginVertical: 5,
         }}
-        title="Administrar Perfil" 
+        title="categoria"
         type="solid"
         icon={<Icon name="file-document" color="#ffffff" size={26} />}
         onPress={() => alert('Button Clicked!')}
-        />
-        
-<Text style={{color: colors.text}}>Recientes</Text>
-        
-      <Button
-        title="Go to details screen"
-        onPress={() => navigation.navigate("Details")}
       />
-<ScrollView></ScrollView>
-      </View>
+       <Button
+        buttonStyle={{
+          borderRadius: 20,
+          paddingVertical: 12,
+          paddingHorizontal: 100,
+          marginHorizontal: 25,
+          marginVertical: 5,
+        }}
+        title="Administrar Perfil"
+        type="solid"
+        icon={<Icon name="file-document" color="#ffffff" size={26} />}
+        onPress={() => alert('Button Clicked!')}
+      />
+       <Button
+        buttonStyle={{
+          borderRadius: 20,
+          paddingVertical: 12,
+          paddingHorizontal: 100,
+          marginHorizontal: 25,
+          marginVertical: 5,
+        }}
+        title="Administrar Perfil"
+        type="solid"
+        icon={<Icon name="file-document" color="#ffffff" size={26} />}
+        onPress={() => alert('Button Clicked!')}
+      />
+  </ScrollView>
+   <Divider
+      style={{ width: "100%", margin: 20 }}
+      color="#2089dc"
+      insetType="left"
+      subHeaderStyle={{}}
+      width={10}
+      orientation="horizontal"
+    />
+
+<Text style={{color: colors.text}}>Favoritos</Text>
+      <ScrollView horizontal={true}>
+      <Text style={{ color: colors.text }}>Recientes </Text>
+      <Text style={{ color: colors.text }}>Recientes </Text>
+      </ScrollView>
+    
+      </SafeAreaView>
     );
 };
 
