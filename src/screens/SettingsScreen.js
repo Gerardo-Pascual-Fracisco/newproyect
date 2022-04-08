@@ -1,12 +1,18 @@
 import React from 'react';
-import { View, Text, Button, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
+import { Button, ButtonGroup, withTheme } from '@rneui/themed';
 
 const SettingsScreen = () => {
     return (
       <View style={styles.container}>
         <Text>Settings Screen</Text>
+        <Button 
+       title="Solid" 
+       type="Outline" icon="home"  
+       onPress={() => navigation.navigate("Details")}/>
+
         <Button
-          title="Click Here"
+          title="Confidu"
           onPress={() => alert('Button Clicked!')}
         />
       </View>

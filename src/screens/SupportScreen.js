@@ -6,7 +6,7 @@ const SupportScreen = () => {
       <View style={styles.container}>
         <Text>Support Screen</Text>
         <Button
-          title="Click Here"
+          title="sopporte"
           onPress={() => alert('Button Clicked!')}
         />
       </View>

@@ -23,10 +23,10 @@ import {
 
 import { DrawerContent } from './screens/DrawerContent';
 
-import MainTabScreen from './screens/MainTabScreen';
-import SupportScreen from './screens/SupportScreen';
-import SettingsScreen from './screens/SettingsScreen';
-import BookmarkScreen from './screens/BookmarkScreen';
+import MainTabScreen from './src/screens/MainTabScreen';
+import SupportScreen from './src/screens/SupportScreen';
+import SettingsScreen from './src/screens/SettingsScreen';
+import BookmarkScreen from './src/screens/BookmarkScreen';
 
 import { AuthContext } from './components/context';
 
@@ -166,7 +166,7 @@ const App = () => {
     <PaperProvider theme={theme}>
     <AuthContext.Provider value={authContext}>
     <NavigationContainer theme={theme}>
-      { loginState.userToken !== null ? (
+      { loginState.userToken == null ? (
         <Drawer.Navigator drawerContent={props => <DrawerContent {...props} />}>
           <Drawer.Screen name="HomeDrawer" component={MainTabScreen} />
           <Drawer.Screen name="SupportScreen" component={SupportScreen} />
