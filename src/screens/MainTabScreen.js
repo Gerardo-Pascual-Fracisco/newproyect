@@ -7,9 +7,9 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import Icon2 from 'react-native-vector-icons/Fontisto';
 import Icon3 from 'react-native-vector-icons/AntDesign'
 
-//importar pantallas para pantalla inicial
+//importar pantallas para inicio
 import HomeScreen from './HomeScreen';
-//importar pantallas para Busqueda
+//importar pantallas para busqueda
 import ServicesScreen from './ServicesScreen';
 //importar pantallas para chat
 import MyServicesScreen from './MyServicesScreen';
@@ -84,6 +84,7 @@ const MainTabScreen = () => (
 
 export default MainTabScreen;
 
+//-----------configurar ruta pantallas inicio
 const HomeStackScreen = ({ navigation }) => (
   <HomeStack.Navigator screenOptions={{
     headerStyle: {
@@ -100,6 +101,7 @@ const HomeStackScreen = ({ navigation }) => (
   </HomeStack.Navigator>
 );
 
+//-----------configurar ruta pantallas busuqeda
 const ServicesStackScreen = ({ navigation }) => (
   <ServicesStack.Navigator screenOptions={{
     headerStyle: {
@@ -115,7 +117,7 @@ const ServicesStackScreen = ({ navigation }) => (
   </ServicesStack.Navigator>
 );
 
-
+//-----------configurar ruta pantallas chat
 const MyServicesSatckScreen = ({ navigation }) => (
   <MyServicesStack.Navigator screenOptions={{
     headerStyle: {
@@ -131,6 +133,7 @@ const MyServicesSatckScreen = ({ navigation }) => (
   </MyServicesStack.Navigator>
 );
 
+//-----------configurar ruta pantallas configuracion
 const SettingsSatckScreen = ({ navigation }) => (
   <SettingsStack.Navigator screenOptions={{
     headerStyle: {
