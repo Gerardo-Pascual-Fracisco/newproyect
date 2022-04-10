@@ -7,12 +7,16 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import Icon2 from 'react-native-vector-icons/Fontisto';
 import Icon3 from 'react-native-vector-icons/AntDesign'
 
+//importar pantallas para pantalla inicial
 import HomeScreen from './HomeScreen';
+//importar pantallas para Busqueda
 import ServicesScreen from './ServicesScreen';
+//importar pantallas para chat
 import MyServicesScreen from './MyServicesScreen';
+//importar pantallas para configuracion
 import SettingsScreen from './SettingsScreen';
-
 import EditProfileScreen from './EditProfileScreen';
+
 const HomeStack = createStackNavigator();
 const ServicesStack = createStackNavigator();
 const MyServicesStack = createStackNavigator();
