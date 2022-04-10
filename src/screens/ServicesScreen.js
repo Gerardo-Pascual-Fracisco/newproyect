@@ -5,7 +5,7 @@ import { Button, ButtonGroup, withTheme, SearchBar, Divider } from '@rneui/theme
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-const DetailsScreen = ({ navigation }) => {
+const ServicesScreen = ({ navigation }) => {
   const { colors } = useTheme();
   const [value, setValue] = React.useState("");
   const theme = useTheme();
@@ -91,7 +91,7 @@ const DetailsScreen = ({ navigation }) => {
   );
 };
 
-export default DetailsScreen;
+export default ServicesScreen;
 
 const styles = StyleSheet.create({
   container: {

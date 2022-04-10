@@ -5,7 +5,7 @@ import { useTheme } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-const ProfileScreen = ({navigation}) => {
+const MyServicesScreen = ({navigation}) => {
   const { colors } = useTheme();
   const [value, setValue] = React.useState("");
   const theme = useTheme();
@@ -53,7 +53,7 @@ const ProfileScreen = ({navigation}) => {
     );
 };
 
-export default ProfileScreen;
+export default MyServicesScreen;
 
 const styles = StyleSheet.create({
   container: {

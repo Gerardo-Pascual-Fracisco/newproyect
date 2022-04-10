@@ -6,6 +6,7 @@
  * @flow
  */
 
+ 
 import React, { useEffect } from 'react';
 import { View, ActivityIndicator } from 'react-native';
 import { 
@@ -21,12 +22,10 @@ import {
   DarkTheme as PaperDarkTheme 
 } from 'react-native-paper';
 
-import { DrawerContent } from './screens/DrawerContent';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 
 import MainTabScreen from './src/screens/MainTabScreen';
-import SupportScreen from './src/screens/SupportScreen';
-import SettingsScreen from './src/screens/SettingsScreen';
-import BookmarkScreen from './src/screens/BookmarkScreen';
+
 
 import { AuthContext } from './components/context';
 
@@ -35,6 +34,7 @@ import RootStackScreen from './screens/RootStackScreen';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Drawer = createDrawerNavigator();
+const Tab = createMaterialBottomTabNavigator();
 
 const App = () => {
   // const [isLoading, setIsLoading] = React.useState(true);
@@ -162,17 +162,18 @@ const App = () => {
       </View>
     );
   }
+
+ 
+
   return (
     <PaperProvider theme={theme}>
     <AuthContext.Provider value={authContext}>
     <NavigationContainer theme={theme}>
+      
       { loginState.userToken == null ? (
-        <Drawer.Navigator drawerContent={props => <DrawerContent {...props} />}>
-          <Drawer.Screen name="HomeDrawer" component={MainTabScreen} />
-          <Drawer.Screen name="SupportScreen" component={SupportScreen} />
-          <Drawer.Screen name="SettingsScreen" component={SettingsScreen} />
-          <Drawer.Screen name="BookmarkScreen" component={BookmarkScreen} />
-        </Drawer.Navigator>
+        
+        <MainTabScreen/>
+
       )
     :
       <RootStackScreen/>
@@ -180,6 +181,9 @@ const App = () => {
     </NavigationContainer>
     </AuthContext.Provider>
     </PaperProvider>
+
+
+
   );
 }
 

@@ -4,16 +4,20 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import { createStackNavigator } from '@react-navigation/stack';
 
 import Icon from 'react-native-vector-icons/Ionicons';
+import Icon2 from 'react-native-vector-icons/Fontisto';
+import Icon3 from 'react-native-vector-icons/AntDesign'
 
 import HomeScreen from './HomeScreen';
-import DetailsScreen from './DetailsScreen';
-import ExploreScreen from './ExploreScreen';
-import ProfileScreen from './ProfileScreen';
-import PersonalScreen from './PersonalScreen';
+import ServicesScreen from './ServicesScreen';
+import MyServicesScreen from './MyServicesScreen';
+import SettingsScreen from './SettingsScreen';
 
 const HomeStack = createStackNavigator();
-const DetailsStack = createStackNavigator();
-const ExploreStack = createStackNavigator();
+const ServicesStack = createStackNavigator();
+const MyServicesStack = createStackNavigator();
+const SettingsStack = createStackNavigator();
+
+
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -34,38 +38,42 @@ const MainTabScreen = () => (
       }}
     />
     <Tab.Screen
-      name="Explore"
-      component={DetailsStackScreen}
+      name="Services"
+      component={ServicesStackScreen}
       options={{
-        tabBarLabel: 'Explore',
+        tabBarLabel: 'Services',
         tabBarColor: '#1f65ff',
         tabBarIcon: ({ color }) => (
-          <Icon name="ios-notifications" color={color} size={26} />
+          <Icon2 name="person" color={color} size={26} />
         ),
       }}
     />
     <Tab.Screen
-      name="Chat"
-      component={ProfileScreen}
+      name="My services"
+      component={MyServicesSatckScreen}
       options={{
-        tabBarLabel: 'Chat',
+        tabBarLabel: 'My services',
         tabBarColor: '#694fad',
         tabBarIcon: ({ color }) => (
-          <Icon name="ios-person" color={color} size={26} />
+          <Icon3 name="contacts" color={color} size={26} />
         ),
       }}
     />
-    <Tab.Screen
+     <Tab.Screen
       name="Settings"
-      component={ExplorerStackScreen}
+      component={SettingsSatckScreen}
       options={{
         tabBarLabel: 'Settings',
-        tabBarColor: '#d02860',
+        tabBarColor: '#694fad',
         tabBarIcon: ({ color }) => (
-          <Icon name="ios-aperture" color={color} size={26} />
+          <Icon3 name="setting" color={color} size={26} />
         ),
       }}
     />
+    
+ {/* Pantallas de settings*/}
+
+
   </Tab.Navigator>
 );
 
@@ -82,16 +90,13 @@ const HomeStackScreen = ({ navigation }) => (
     }
   }}>
     <HomeStack.Screen name="Home" component={HomeScreen} options={{
-      title: 'Overview',
-      headerLeft: () => (
-        <Icon.Button name="ios-menu" size={25} backgroundColor="#009387" onPress={() => navigation.openDrawer()}></Icon.Button>
-      )
-    }} />
+      title: 'Home'
+     }} />
   </HomeStack.Navigator>
 );
 
-const DetailsStackScreen = ({ navigation }) => (
-  <DetailsStack.Navigator screenOptions={{
+const ServicesStackScreen = ({ navigation }) => (
+  <ServicesStack.Navigator screenOptions={{
     headerStyle: {
       backgroundColor: '#1f65ff',
     },
@@ -100,16 +105,14 @@ const DetailsStackScreen = ({ navigation }) => (
       fontWeight: 'bold'
     }
   }}>
-    <DetailsStack.Screen name="Details" component={DetailsScreen} options={{
-      headerLeft: () => (
-        <Icon.Button name="ios-menu" size={25} backgroundColor="#1f65ff" onPress={() => navigation.openDrawer()}></Icon.Button>
-      )
+    <ServicesStack.Screen name="Services" component={ServicesScreen} options={{
     }} />
-  </DetailsStack.Navigator>
+  </ServicesStack.Navigator>
 );
 
-const ExplorerStackScreen = ({ navigation }) => (
-  <ExploreStack.Navigator screenOptions={{
+
+const MyServicesSatckScreen = ({ navigation }) => (
+  <MyServicesStack.Navigator screenOptions={{
     headerStyle: {
       backgroundColor: '#1f65ff',
     },
@@ -118,15 +121,26 @@ const ExplorerStackScreen = ({ navigation }) => (
       fontWeight: 'bold'
     }
   }}>
-    <ExploreStack.Screen name="Explorer" component={ExploreScreen} options={{
-      headerLeft: () => (
-        <Icon.Button name="ios-menu" size={25} backgroundColor="#1f65ff" onPress={() => navigation.openDrawer()}></Icon.Button>
-      )
+    <MyServicesStack.Screen name="My Services" component={MyServicesScreen} options={{
     }} />
-    <ExploreStack.Screen name="Personal" component={PersonalScreen} options={{
-      headerLeft: () => (
-        <Icon.Button name="ios-menu" size={25} backgroundColor="#1f65ff" onPress={() => navigation.openDrawer()}></Icon.Button>
-      )
-    }} />
-  </ExploreStack.Navigator>
+  </MyServicesStack.Navigator>
 );
+
+const SettingsSatckScreen = ({ navigation }) => (
+  <SettingsStack.Navigator screenOptions={{
+    headerStyle: {
+      backgroundColor: '#1f65ff',
+    },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      fontWeight: 'bold'
+    }
+  }}>
+    <SettingsStack.Screen name="Settings" component={SettingsScreen} options={{
+     
+    }} />
+   
+  </SettingsStack.Navigator>
+);
+
+
