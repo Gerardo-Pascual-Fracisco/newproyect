@@ -12,6 +12,7 @@ import ServicesScreen from './ServicesScreen';
 import MyServicesScreen from './MyServicesScreen';
 import SettingsScreen from './SettingsScreen';
 
+import EditProfileScreen from './EditProfileScreen';
 const HomeStack = createStackNavigator();
 const ServicesStack = createStackNavigator();
 const MyServicesStack = createStackNavigator();
@@ -138,6 +139,11 @@ const SettingsSatckScreen = ({ navigation }) => (
   }}>
     <SettingsStack.Screen name="Settings" component={SettingsScreen} options={{
      
+    }} />
+      <SettingsStack.Screen 
+      name="EditProfile" 
+      component={EditProfileScreen} 
+      options={{
     }} />
    
   </SettingsStack.Navigator>
