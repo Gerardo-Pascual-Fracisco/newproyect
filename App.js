@@ -12,6 +12,11 @@ import {
   DarkTheme as PaperDarkTheme 
 } from 'react-native-paper';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+<<<<<<< HEAD
+import TaskItem from './components/Categories/TaskItem';
+
+=======
+>>>>>>> cf23d0d4f5dc2df7ec453c611b46f960a497d431
 import MainTabScreen from './src/screens/MainTabScreen';
 import { AuthContext } from './components/context';
 import RootStackScreen from './screens/RootStackScreen';
@@ -170,6 +175,10 @@ const App = () => {
 
 
   );
+
+ 
 }
+
+
 
 export default App;

@@ -1,127 +1,140 @@
-import React from 'react';
-import { View, Text, StyleSheet, StatusBar,ScrollView } from 'react-native';
-import { useTheme } from '@react-navigation/native';
+import React from "react";
+import Layout from "../../components/Categories/Layout";
+
+import TasksList from "../../components/Categories/TasksList";
+import { Dimensions,View, Text, StyleSheet, ScrollView,TouchableOpacity,ImageBackground,TextInput } from 'react-native';
 import { Button, ButtonGroup, withTheme,SearchBar, Divider } from '@rneui/themed';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import Carousel from 'react-native-snap-carousel';
+import CarouselImages from '../../components/Categories/CarouselImages';
 
-const HomeScreen = ({navigation}) => {
 
-  const { colors } = useTheme();
-  const [value, setValue] = React.useState("");
-  const theme = useTheme();
+import Feather from 'react-native-vector-icons/Feather';
+const widthScreen = Dimensions.get ("window").width
 
-  const [
-    selectedIndex,
-    setSelectedIndex
-  ] = React.useState(1);
-  const [
-    selectedIndexes,
-    setSelectedIndexes
-  ] = React.useState([]);
-  
-    return (
-      <SafeAreaView style={styles.container}>
-
-        <StatusBar barStyle= { theme.dark ? "light-content" : "dark-content" }/>
-      <Text style={{color: colors.text}}>Recientes</Text>
-      <ScrollView horizontal={true}>
-      <Text style={{ color: colors.text }}>Recientes </Text>
-      <Text style={{ color: colors.text }}>Recientes </Text>
-      </ScrollView>
-      
-      <Divider
-      style={{ width: "100%", margin: 20 }}
-      color="#2089dc"
-      insetType="left"
-      subHeaderStyle={{}}
-      width={10}
-      orientation="horizontal"
-    />
-       
-       <SearchBar 
-        platform="android"
-        containerStyle={{}}
-        inputContainerStyle={{}}
-        inputStyle={{}}
-        leftIconContainerStyle={{}}
-        rightIconContainerStyle={{}}
-        loadingProps={{}}
-        onChangeText={newVal => setValue(newVal)}
-        onClearText={() => console.log(onClearText())}
-        placeholder="Type query here..."
-        placeholderTextColor="#888"
-        cancelButtonTitle="Cancel"
-        cancelButtonProps={{}}
-       />
-   
-   
- <ScrollView horizontal={true}>
- <Button
-        buttonStyle={{
-          borderRadius: 20,
-          paddingVertical: 12,
-          paddingHorizontal: 100,
-          marginHorizontal: 25,
-          marginVertical: 5,
-        }}
-        title="categoria"
-        type="solid"
-        icon={<Icon name="file-document" color="#ffffff" size={26} />}
-        onPress={() => alert('Button Clicked!')}
-      />
-       <Button
-        buttonStyle={{
-          borderRadius: 20,
-          paddingVertical: 12,
-          paddingHorizontal: 100,
-          marginHorizontal: 25,
-          marginVertical: 5,
-        }}
-        title="Administrar Perfil"
-        type="solid"
-        icon={<Icon name="file-document" color="#ffffff" size={26} />}
-        onPress={() => alert('Button Clicked!')}
-      />
-       <Button
-        buttonStyle={{
-          borderRadius: 20,
-          paddingVertical: 12,
-          paddingHorizontal: 100,
-          marginHorizontal: 25,
-          marginVertical: 5,
-        }}
-        title="Administrar Perfil"
-        type="solid"
-        icon={<Icon name="file-document" color="#ffffff" size={26} />}
-        onPress={() => alert('Button Clicked!')}
-      />
-  </ScrollView>
-   <Divider
-      style={{ width: "100%", margin: 20 }}
-      color="#2089dc"
-      insetType="left"
-      subHeaderStyle={{}}
-      width={10}
-      orientation="horizontal"
-    />
-
-<Text style={{color: colors.text}}>Favoritos</Text>
-      <ScrollView horizontal={true}>
-      <Text style={{ color: colors.text }}>Recientes </Text>
-      <Text style={{ color: colors.text }}>Recientes </Text>
-      </ScrollView>
     
-      </SafeAreaView>
-    );
-};
+const HomeScreen = () => { 
+    return (
+        <View style = { styles.container }>
+             <View style = { styles.container1 }>
+{/* ////////////////////////////////////////////////////////////////////////////////////*/}
+      <ScrollView style={{padding: 20,}}>
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            marginBottom: 20,
+            alignItems: 'stretch',
+
+          }}>
+          <Text style={{fontSize: 18, fontFamily: 'Roboto-Medium'}}>
+            Hello User
+          </Text>
+          <TouchableOpacity onPress={() => navigation.openDrawer()}>
+            <ImageBackground
+              source={require('../../assets/images/user-profile.jpg')}
+              style={{width: 35, height: 35}}
+              imageStyle={{borderRadius: 25}}
+            />
+          </TouchableOpacity>
+        </View>
+
+        <View
+          style={{
+            flexDirection: 'row',
+            borderColor: '#C6C6C6',
+            borderWidth: 1,
+            borderRadius: 8,
+            paddingHorizontal: 10,
+            paddingVertical: 8,
+          }}>
+          <Feather
+            name="search"
+            size={20}
+            color="#C6C6C6"
+            style={{marginRight: 10}}
+          />
+          <TextInput placeholder="Search" />
+        </View>
+
+        <View
+          style={{
+            marginVertical: 15,
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+          }}>
+          <Text style={{fontSize: 18, fontFamily: 'Roboto-Medium'}}>
+            Categories
+          </Text>
+          
+        </View>
+  
+
+        <CarouselImages/>
+
+       
+      </ScrollView>
+
+
+
+
+
+ {/* ////////////////////////////////////////////////////////////////////////////////////*/}
+             </View>
+            
+             <View style = { styles.container3 }>
+    
+           <Layout>
+      <TasksList />
+    </Layout>
+
+             </View>
+        </View>
+        )
+}
+
+
+
+    
 
 export default HomeScreen;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1, 
-    alignItems: 'center', 
-    justifyContent: 'center'
+      alignItems: 'stretch',
+      backgroundColor: 'red',
+      flex: 1,
+      flexDirection: 'column',
+      
+     // justifyContent: 'center',
+    },
+  container1: {
+      alignItems: 'center',
+      backgroundColor: 'white',
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'stretch',
+
+      
+      
   },
-});
+  container2: {
+      alignItems: 'center',
+      backgroundColor: 'white',
+      flex: 1,
+      justifyContent: 'center',
+  },
+  container3: {
+    alignItems: 'center',
+    backgroundColor: 'white',
+    flex: 1,
+    justifyContent: 'center',
+},
+
+viewBody: {
+  flex: 1,
+}
+
+})
+
