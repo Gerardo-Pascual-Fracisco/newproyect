@@ -35,7 +35,7 @@ const MainTabScreen = () => (
     activeColor="#fff"
   >
     <Tab.Screen
-      name="Home"
+      name="Inicio"
       component={HomeStackScreen}
       options={{
         tabBarLabel: 'Home',
@@ -46,7 +46,7 @@ const MainTabScreen = () => (
       }}
     />
     <Tab.Screen
-      name="Services"
+      name="Busqueda"
       component={ServicesStackScreen}
       options={{
         tabBarLabel: 'Services',
@@ -57,9 +57,10 @@ const MainTabScreen = () => (
       }}
     />
     <Tab.Screen
-      name="My services"
+      name="Chat"
       component={MyServicesSatckScreen}
       options={{
+        title:'chat',
         tabBarLabel: 'My services',
         tabBarColor: '#694fad',
         tabBarIcon: ({ color }) => (
@@ -68,7 +69,7 @@ const MainTabScreen = () => (
       }}
     />
      <Tab.Screen
-      name="Settings"
+      name="Configuraciones"
       component={SettingsSatckScreen}
       options={{
         tabBarLabel: 'Settings',
@@ -98,8 +99,9 @@ const HomeStackScreen = ({ navigation }) => (
       fontWeight: 'bold'
     }
   }}>
-    <HomeStack.Screen name="Home" component={HomeScreen} options={{
-      title: 'Home'
+    <HomeStack.Screen name="InicioStack" component={HomeScreen} options={{
+      headerShown:false,
+      title: 'Inicio'
      }} />
   </HomeStack.Navigator>
 );
@@ -115,8 +117,10 @@ const ServicesStackScreen = ({ navigation }) => (
       fontWeight: 'bold'
     }
   }}>
-    <ServicesStack.Screen name="Services" component={ServicesScreen} options={{
-    }} />
+    <ServicesStack.Screen name="BusquedaStack" component={ServicesScreen}  options={{
+      headerShown:false,
+      title: 'Busqueda'
+     }} />
   </ServicesStack.Navigator>
 );
 
@@ -131,7 +135,9 @@ const MyServicesSatckScreen = ({ navigation }) => (
       fontWeight: 'bold'
     }
   }}>
-    <MyServicesStack.Screen name="My Services" component={MyServicesScreen} options={{
+    <MyServicesStack.Screen name="ChatStack" component={MyServicesScreen} options={{
+      headerShown:false,
+      title: 'Chat'
     }} />
   </MyServicesStack.Navigator>
 );
@@ -147,13 +153,14 @@ const SettingsSatckScreen = ({ navigation }) => (
       fontWeight: 'bold'
     }
   }}>
-    <SettingsStack.Screen name="Settings" component={SettingsScreen} options={{
-     
+    <SettingsStack.Screen name="ConfiguraccionesStack" component={SettingsScreen} options={{
+      headerShown:false,
+      title: 'Configuraciones'    
     }} />
       <SettingsStack.Screen 
-      name="EditProfile" 
+      name="EditProfile" //Nombre que coloras en onPress={() => navigation.navigate('EditProfile')}
       component={EditProfileScreen} 
-      options={{
+      options={{title:'Perfil'
     }} />
    
   </SettingsStack.Navigator>

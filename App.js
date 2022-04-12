@@ -1,12 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
- 
 import React, { useEffect } from 'react';
 import { View, ActivityIndicator } from 'react-native';
 import { 
@@ -15,21 +6,19 @@ import {
   DarkTheme as NavigationDarkTheme
 } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-
 import { 
   Provider as PaperProvider, 
   DefaultTheme as PaperDefaultTheme,
   DarkTheme as PaperDarkTheme 
 } from 'react-native-paper';
-
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+<<<<<<< HEAD
 import TaskItem from './components/Categories/TaskItem';
 
+=======
+>>>>>>> cf23d0d4f5dc2df7ec453c611b46f960a497d431
 import MainTabScreen from './src/screens/MainTabScreen';
-
-
 import { AuthContext } from './components/context';
-
 import RootStackScreen from './screens/RootStackScreen';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
