@@ -23,24 +23,15 @@ const MyServicesScreen = ({ navigation }) => {
       </View>
       <View style={styles.teclado}>
         <Input
-          containerStyle={{}}
           disabledInputStyle={{ background: "#ddd" }}
-          inputContainerStyle={{}}
-          errorStyle={{}}
-          errorProps={{}}
-          inputStyle={{}}
           label="User Form"
-          labelStyle={{}}
-          labelProps={{}}
           leftIcon={<Icon name="account-outline" size={20} />}
           leftIconContainerStyle={{}}
           rightIcon={<Icon name="close" size={20} />}
           rightIconContainerStyle={{}}
-          placeholder="Enter Name"
+          placeholder="Mensaje"
         />
       </View>
-
-
     </SafeAreaView>
   );
 };

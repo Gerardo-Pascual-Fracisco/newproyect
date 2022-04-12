@@ -1,5 +1,5 @@
-const API = 'http://192.168.130.27:8000/api/category'
-export const getTasks=async() => { 
+const API = 'http://192.168.130.27:8000/api/user/1'
+export const getUser=async() => { 
     const res = await fetch(API)
     return await res.json()
 }
@@ -16,8 +16,8 @@ export const saveTask = async (newTask) => {
     return await res.json();
   };
   
-export const deleteTask = async (id_category) => {
-    await fetch(`${API}/${id_category}`, {
+export const deleteTask = async (id) => {
+    await fetch(`${API}/${id}`, {
       method: "DELETE",
     });
   };

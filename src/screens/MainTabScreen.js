@@ -35,7 +35,7 @@ const MainTabScreen = () => (
       name="Inicio"
       component={HomeStackScreen}
       options={{
-        tabBarLabel: 'Home',
+        tabBarLabel: 'Inicio',
         tabBarColor: '#009387',
         tabBarIcon: ({ color }) => (
           <Icon name="ios-home" color={color} size={26} />
@@ -46,8 +46,8 @@ const MainTabScreen = () => (
       name="Busqueda"
       component={ServicesStackScreen}
       options={{
-        tabBarLabel: 'Services',
-        tabBarColor: '#1f65ff',
+        tabBarLabel: 'Busqueda',
+        tabBarColor: '#4f6bad',
         tabBarIcon: ({ color }) => (
           <Icon2 name="person" color={color} size={26} />
         ),
@@ -57,8 +57,7 @@ const MainTabScreen = () => (
       name="Chat"
       component={MyServicesSatckScreen}
       options={{
-        title:'chat',
-        tabBarLabel: 'My services',
+        tabBarLabel: 'Chat',
         tabBarColor: '#694fad',
         tabBarIcon: ({ color }) => (
           <Icon3 name="contacts" color={color} size={26} />
@@ -69,8 +68,8 @@ const MainTabScreen = () => (
       name="Configuraciones"
       component={SettingsSatckScreen}
       options={{
-        tabBarLabel: 'Settings',
-        tabBarColor: '#694fad',
+        tabBarLabel: 'Configuración',
+        tabBarColor: '#ad4f9a',
         tabBarIcon: ({ color }) => (
           <Icon3 name="setting" color={color} size={26} />
         ),
@@ -143,7 +142,7 @@ const MyServicesSatckScreen = ({ navigation }) => (
 const SettingsSatckScreen = ({ navigation }) => (
   <SettingsStack.Navigator screenOptions={{
     headerStyle: {
-      backgroundColor: '#1f65ff',
+      backgroundColor: '#ad4f83',
     },
     headerTintColor: '#fff',
     headerTitleStyle: {
