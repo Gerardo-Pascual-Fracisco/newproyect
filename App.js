@@ -23,6 +23,7 @@ import {
 } from 'react-native-paper';
 
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import TaskItem from './components/Categories/TaskItem';
 
 import MainTabScreen from './src/screens/MainTabScreen';
 
@@ -185,6 +186,10 @@ const App = () => {
 
 
   );
+
+ 
 }
+
+
 
 export default App;

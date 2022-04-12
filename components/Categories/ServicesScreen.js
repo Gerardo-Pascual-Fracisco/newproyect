@@ -7,7 +7,6 @@ import { Button, ButtonGroup, withTheme,SearchBar, Divider } from '@rneui/themed
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Carousel from 'react-native-snap-carousel';
-import CarouselImages from '../../components/Services/CarouselImages';
 
 import Feather from 'react-native-vector-icons/Feather';
 const widthScreen = Dimensions.get ("window").width
@@ -28,7 +27,7 @@ const ServicesScreen = () => {
 
           }}>
           <Text style={{fontSize: 18, fontFamily: 'Roboto-Medium'}}>
-            Hello User
+            Hello John Doe
           </Text>
           <TouchableOpacity onPress={() => navigation.openDrawer()}>
             <ImageBackground
@@ -64,15 +63,16 @@ const ServicesScreen = () => {
             justifyContent: 'space-between',
           }}>
           <Text style={{fontSize: 18, fontFamily: 'Roboto-Medium'}}>
-            Services
+            Categories
           </Text>
-          
+          <TouchableOpacity onPress={() => {}}>
+            <Text style={{color: '#0aada8'}}>See all</Text>
+          </TouchableOpacity>
         </View>
 
        
        
-        <CarouselImages/>
-
+  
  
   
        
@@ -88,7 +88,10 @@ const ServicesScreen = () => {
              <View style = { styles.container3 }>
     
   
-             <ServicesList/>
+             
+             <Layout>
+      <ServicesList />
+    </Layout>
              </View>
         </View>
         )
@@ -111,7 +114,7 @@ const styles = StyleSheet.create({
     },
   container1: {
       alignItems: 'center',
-      backgroundColor: 'white',
+      backgroundColor: 'yellow',
       flex: 1,
       justifyContent: 'center',
       alignItems: 'stretch',
@@ -127,7 +130,7 @@ const styles = StyleSheet.create({
   },
   container3: {
     alignItems: 'center',
-    backgroundColor: 'white',
+    backgroundColor: 'yellow',
     flex: 1,
     justifyContent: 'center',
 },

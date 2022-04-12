@@ -61,7 +61,7 @@ export function SettingsScreen({ navigation }) {
                                 />
                             )}
                             label="Editar Perfil"
-                            onPress={() => navigation.navigate('EditProfile')}//nombre colocado en la constante SettingsSatckScreen dentro de MainTabScreen
+                            onPress={() => navigation.navigate('ItemStack')}//nombre colocado en la constante SettingsSatckScreen dentro de MainTabScreen
 
                         />
                         <DrawerItem
