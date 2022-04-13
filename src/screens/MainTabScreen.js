@@ -17,13 +17,13 @@ import MyServicesScreen from './MyServicesScreen';
 //importar pantallas para configuracion
 import SettingsScreen from './SettingsScreen';
 import EditProfileScreen from './EditProfileScreen';
-import TaskItem from '../../components/Categories/TaskItem';
+
 
 const HomeStack = createStackNavigator();
 const ServicesStack = createStackNavigator();
 const MyServicesStack = createStackNavigator();
 const SettingsStack = createStackNavigator();
-const ItemStack = createStackNavigator();
+
 
 
 
@@ -164,30 +164,3 @@ const SettingsSatckScreen = ({ navigation }) => (
    
   </SettingsStack.Navigator>
 );
-
-const ItemSatckScreen = ({ navigation }) => (
-  <ItemSatckScreen.Navigator screenOptions={{
-    headerStyle: {
-      backgroundColor: '#1f65ff',
-    },
-    headerTintColor: '#fff',
-    headerTitleStyle: {
-      fontWeight: 'bold'
-    }
-  }}>
-    <ItemSatckScreen.Screen name="ItemStack" component={ItemStack} options={{
-     
-    }} />
-      <ItemSatckScreen.Screen 
-      name="ItemStack" 
-      component={ItemSatckScreen} 
-      options={{
-    }} />
-   
-  </ItemSatckScreen.Navigator>
-);
-
-
-
-
-

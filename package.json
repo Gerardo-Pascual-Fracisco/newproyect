@@ -22,12 +22,8 @@
     "@rneui/themed": "^4.0.0-rc.1",
     "axios": "^0.26.1",
     "babel-plugin-macros": "^3.1.0",
-<<<<<<< HEAD
     "expo": "^44.0.0",
-=======
-    "expo": "^44.0.6",
     "expo-font": "~10.0.4",
->>>>>>> 3009acdc9fe2258258b4ce298e60858f01b57797
     "expo-linear-gradient": "~11.0.3",
     "expo-status-bar": "~1.2.0",
     "expo-updates": "~0.11.6",

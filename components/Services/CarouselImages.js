@@ -28,12 +28,12 @@ export default function CarouselImages() {
 
   const [services, setTasks] = useState([])
   
-  const loadTasks = async () => {
+  const loadServices = async () => {
     const data = await getServices()
     setTasks(data.data);
   };
   useEffect(() => {
-    loadTasks();
+    loadServices();
   }, []);
 
 
@@ -57,7 +57,7 @@ export default function CarouselImages() {
         decelerationRate={0}
         scrollEventThrottle={16}
         data={services}
-        keyExtractor={(item) => item.id_category + ""}
+        keyExtractor={(item) => item.id_service+ ""}
 
         renderItem={({ item, index }) => {
           const inputRange = [

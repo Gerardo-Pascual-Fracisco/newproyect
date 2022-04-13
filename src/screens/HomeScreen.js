@@ -2,24 +2,19 @@ import React from "react";
 import Layout from "../../components/Categories/Layout";
 
 import TasksList from "../../components/Categories/TasksList";
-import { Dimensions,View, Text, StyleSheet, ScrollView,TouchableOpacity,ImageBackground,TextInput } from 'react-native';
-import { Button, ButtonGroup, withTheme,SearchBar, Divider } from '@rneui/themed';
+import { Dimensions, View, Text, StyleSheet, ScrollView, TouchableOpacity, ImageBackground, TextInput } from 'react-native';
+import { Button, ButtonGroup, withTheme, SearchBar, Divider } from '@rneui/themed';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import Carousel from 'react-native-snap-carousel';
 import CarouselImages from '../../components/Categories/CarouselImages';
 
-
 import Feather from 'react-native-vector-icons/Feather';
-const widthScreen = Dimensions.get ("window").width
-
-    
-const HomeScreen = () => { 
-    return (
-        <View style = { styles.container }>
-             <View style = { styles.container1 }>
-{/* ////////////////////////////////////////////////////////////////////////////////////*/}
-      <ScrollView style={{padding: 20,}}>
+const widthScreen = Dimensions.get("window").width
+const HomeScreen = () => {
+  return (<View style={styles.container}>
+    <View style={styles.container1}>
+      {/* ////////////////////////////////////////////////////////////////////////////////////*/}
+      <ScrollView style={{ padding: 20, }}>
         <View
           style={{
             flexDirection: 'row',
@@ -28,14 +23,14 @@ const HomeScreen = () => {
             alignItems: 'stretch',
 
           }}>
-          <Text style={{fontSize: 18, fontFamily: 'Roboto-Medium'}}>
+          <Text style={{ fontSize: 18}}>
             Hello User
           </Text>
           <TouchableOpacity onPress={() => navigation.openDrawer()}>
             <ImageBackground
               source={require('../../assets/images/user-profile.jpg')}
-              style={{width: 35, height: 35}}
-              imageStyle={{borderRadius: 25}}
+              style={{ width: 35, height: 35 }}
+              imageStyle={{ borderRadius: 25 }}
             />
           </TouchableOpacity>
         </View>
@@ -53,7 +48,7 @@ const HomeScreen = () => {
             name="search"
             size={20}
             color="#C6C6C6"
-            style={{marginRight: 10}}
+            style={{ marginRight: 10 }}
           />
           <TextInput placeholder="Search" />
         </View>
@@ -64,77 +59,70 @@ const HomeScreen = () => {
             flexDirection: 'row',
             justifyContent: 'space-between',
           }}>
-          <Text style={{fontSize: 18, fontFamily: 'Roboto-Medium'}}>
+          <Text style={{ fontSize: 18}}>
             Categories
           </Text>
-          
+
         </View>
-  
 
-        <CarouselImages/>
 
-       
+        <CarouselImages />
       </ScrollView>
 
 
 
 
 
- {/* ////////////////////////////////////////////////////////////////////////////////////*/}
-             </View>
-            
-             <View style = { styles.container3 }>
-    
-           <Layout>
-      <TasksList />
-    </Layout>
+      {/* ////////////////////////////////////////////////////////////////////////////////////*/}
+    </View>
 
-             </View>
-        </View>
-        )
+    <View style={styles.container3}>
+
+      <Layout>
+        <TasksList />
+      </Layout>
+
+    </View>
+  </View>
+  )
 }
-
-
-
-    
-
 export default HomeScreen;
 
 const styles = StyleSheet.create({
   container: {
-      alignItems: 'stretch',
-      backgroundColor: 'red',
-      flex: 1,
-      flexDirection: 'column',
-      
-     // justifyContent: 'center',
-    },
-  container1: {
-      alignItems: 'center',
-      backgroundColor: 'white',
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'stretch',
+    alignItems: 'stretch',
+    backgroundColor: 'red',
+    flex: 1,
+    flexDirection: 'column',
 
-      
-      
+    // justifyContent: 'center',
+  },
+  container1: {
+    alignItems: 'center',
+    backgroundColor: 'white',
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'stretch',
+
+
+
   },
   container2: {
-      alignItems: 'center',
-      backgroundColor: 'white',
-      flex: 1,
-      justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white',
+    flex: 1,
+    justifyContent: 'center',
   },
   container3: {
     alignItems: 'center',
     backgroundColor: 'white',
     flex: 1,
     justifyContent: 'center',
-},
+  },
 
-viewBody: {
-  flex: 1,
-}
+  viewBody: {
+    flex: 1,
+  }
 
 })
 
