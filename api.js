@@ -4,6 +4,7 @@ const SERVICES = 'http://192.168.1.187:8000/api/service'
 
 const MOSTRAR_SERVICES = 'http://192.168.1.187:8000/api/showById/1'
 
+
 export const getTasks=async() => { 
     const res = await fetch(API)
     return await res.json()
