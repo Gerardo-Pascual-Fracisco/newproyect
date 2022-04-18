@@ -1,4 +1,4 @@
-const API = 'http://192.168.130.27:8000/api/user/1'
+const API = 'http://192.168.197.27:8000/api/user/1'
 export const getUser = async () => {
   const res = await fetch(API)
   return await res.json()
@@ -15,6 +15,19 @@ export const saveTask = async (newTask) => {
   });
   return await res.json();
 };
+
+export const updateUser = async (data) =>{
+  await fetch(API, {
+    method: 'PUT', //'POST' or 'PUT'
+    body: JSON.stringify(data), // data can be `string` or {object}!
+    headers:{
+      'Content-Type': 'application/json',
+    }
+  })
+  .then(res => res.json())
+  .catch(error => console.error('Error:', error))
+  .then(response => console.log('Success:', response));
+}
 
 export const deleteTask = async (id) => {
   await fetch(`${API}/${id}`, {
