@@ -1,12 +1,12 @@
 import React from "react";
 import Layout from "../../components/Categories/Layout";
 import TasksList from "../../components/Categories/TasksList";
-import { Dimensions, View, Text, StyleSheet, ScrollView, TouchableOpacity, ImageBackground, TextInput } from 'react-native';
+import { Dimensions, View, Text, StyleSheet, ScrollView, TouchableOpacity, ImageBackground, TextInput, Button } from 'react-native';
 import CarouselImages from '../../components/Categories/CarouselImages';
 
 import Feather from 'react-native-vector-icons/Feather';
 const widthScreen = Dimensions.get("window").width
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
   return (<View style={styles.container}>
     <View style={styles.container1}>
       {/* ////////////////////////////////////////////////////////////////////////////////////*/}
@@ -22,7 +22,7 @@ const HomeScreen = () => {
           <Text style={{ fontSize: 18}}>
             Hello User
           </Text>
-          <TouchableOpacity onPress={() => navigation.openDrawer()}>
+          <TouchableOpacity onPress={() => navigation.navigate('ServicesCategory')}>
             <ImageBackground
               source={require('../../assets/images/user-profile.jpg')}
               style={{ width: 35, height: 35 }}
@@ -73,7 +73,7 @@ const HomeScreen = () => {
     </View>
 
     <View style={styles.container3}>
-
+    
       <Layout>
         <TasksList />
       </Layout>
