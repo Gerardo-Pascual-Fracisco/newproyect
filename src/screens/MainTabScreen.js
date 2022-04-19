@@ -96,7 +96,7 @@ const HomeStackScreen = ({ navigation }) => (
     }
   }}>
     <HomeStack.Screen name="label-1" component={HomeScreen} options={{
-      headerShown:false,
+      headerShown: false,
       title: 'Home'
     }} />
     <HomeStack.Screen
@@ -120,7 +120,7 @@ const ServicesStackScreen = ({ navigation }) => (
     }
   }}>
     <ServicesStack.Screen name="label-2" component={ServicesScreen} options={{
-      headerShown:false,
+      headerShown: false,
     }} />
   </ServicesStack.Navigator>
 );
@@ -137,7 +137,7 @@ const MyServicesSatckScreen = ({ navigation }) => (
     }
   }}>
     <MyServicesStack.Screen name="label-3" component={MyServicesScreen} options={{
-      headerShown:false,
+      headerShown: false,
     }} />
   </MyServicesStack.Navigator>
 );
@@ -154,7 +154,7 @@ const SettingsSatckScreen = ({ navigation }) => (
     }
   }}>
     <SettingsStack.Screen name="label-4" component={SettingsScreen} options={{
-      headerShown:false,
+      headerShown: false,
     }} />
     <SettingsStack.Screen
       name="EditProfile"
