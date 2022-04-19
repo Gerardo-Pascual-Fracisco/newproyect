@@ -6,7 +6,8 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import Icon2 from 'react-native-vector-icons/Fontisto';
 import Icon3 from 'react-native-vector-icons/AntDesign'
 
-
+//importar componentes
+import CategoryServices from '../../components/Categories/CategoryServices';
 //importar pantallas para inicio
 import HomeScreen from './HomeScreen';
 //importar pantallas para busqueda
@@ -105,6 +106,11 @@ const HomeStackScreen = ({ navigation }) => (
       options={{
         title: 'Services'
       }} />
+       <HomeStack.Screen
+      name="CategoryS"
+      component={CategoryServices}
+      options={{
+      }} />
   </HomeStack.Navigator>
 );
 
@@ -162,6 +168,7 @@ const SettingsSatckScreen = ({ navigation }) => (
       options={{
         title: 'Perfil'
       }} />
+      
 
   </SettingsStack.Navigator>
 );
