@@ -21,7 +21,6 @@ const HomeStack = createStackNavigator();
 const ServicesStack = createStackNavigator();
 const MyServicesStack = createStackNavigator();
 const SettingsStack = createStackNavigator();
-const ItemStack = createStackNavigator();
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -96,7 +95,7 @@ const HomeStackScreen = ({ navigation }) => (
       fontWeight: 'bold'
     }
   }}>
-    <HomeStack.Screen name="Home" component={HomeScreen} options={{
+    <HomeStack.Screen name="label-1" component={HomeScreen} options={{
       headerShown:false,
       title: 'Home'
     }} />
@@ -120,7 +119,7 @@ const ServicesStackScreen = ({ navigation }) => (
       fontWeight: 'bold'
     }
   }}>
-    <ServicesStack.Screen name="Services" component={ServicesScreen} options={{
+    <ServicesStack.Screen name="label-2" component={ServicesScreen} options={{
       headerShown:false,
     }} />
   </ServicesStack.Navigator>
@@ -137,7 +136,7 @@ const MyServicesSatckScreen = ({ navigation }) => (
       fontWeight: 'bold'
     }
   }}>
-    <MyServicesStack.Screen name="My Service" component={MyServicesScreen} options={{
+    <MyServicesStack.Screen name="label-3" component={MyServicesScreen} options={{
       headerShown:false,
     }} />
   </MyServicesStack.Navigator>
@@ -154,7 +153,7 @@ const SettingsSatckScreen = ({ navigation }) => (
       fontWeight: 'bold'
     }
   }}>
-    <SettingsStack.Screen name="Settings" component={SettingsScreen} options={{
+    <SettingsStack.Screen name="label-4" component={SettingsScreen} options={{
       headerShown:false,
     }} />
     <SettingsStack.Screen

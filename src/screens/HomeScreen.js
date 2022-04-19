@@ -6,7 +6,7 @@ import CarouselImages from '../../components/Categories/CarouselImages';
 
 import Feather from 'react-native-vector-icons/Feather';
 const widthScreen = Dimensions.get("window").width
-const HomeScreen = ({ navigation }) => {
+const HomeScreen = () => {
   return (<View style={styles.container}>
     <View style={styles.container1}>
       {/* ////////////////////////////////////////////////////////////////////////////////////*/}
@@ -19,10 +19,10 @@ const HomeScreen = ({ navigation }) => {
             alignItems: 'stretch',
 
           }}>
-          <Text style={{ fontSize: 18}}>
+          <Text style={{ fontSize: 18 }}>
             Hello User
           </Text>
-          <TouchableOpacity onPress={() => navigation.navigate('ServicesCategory')}>
+          <TouchableOpacity onPress={() => navigation.openDrawer()}>
             <ImageBackground
               source={require('../../assets/images/user-profile.jpg')}
               style={{ width: 35, height: 35 }}
@@ -55,7 +55,7 @@ const HomeScreen = ({ navigation }) => {
             flexDirection: 'row',
             justifyContent: 'space-between',
           }}>
-          <Text style={{ fontSize: 18}}>
+          <Text style={{ fontSize: 18 }}>
             Categories
           </Text>
 
@@ -73,7 +73,7 @@ const HomeScreen = ({ navigation }) => {
     </View>
 
     <View style={styles.container3}>
-    
+      
       <Layout>
         <TasksList />
       </Layout>
